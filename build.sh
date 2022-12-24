@@ -30,8 +30,8 @@ tar -xf gcc32.tar.gz -C $GCCbPath
 #Main2
 export TZ="Asia/Jakarta"
 KERNEL_ROOTDIR=$(pwd) # IMPORTANT ! Fill with your kernel source root directory.
-DEVICE_CODENAME=sweet
-DEVICE_DEFCONFIG=sweet_defconfig
+DEVICE_CODENAME=Redmi Note 9 (merlin)
+DEVICE_DEFCONFIG=merlin_defconfig
 export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
 export KBUILD_BUILD_USER=KuroSeinen
 export KBUILD_BUILD_HOST=XZI-TEAM
