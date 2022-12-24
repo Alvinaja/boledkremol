@@ -25,6 +25,6 @@ jobs:
            bash initialize
         - name: Starting build
           run: |
-           git clone --depth=1 https://github.com/Alvinaja/RTX-2080-OC-Merlin kernel
+           git clone --depth=1 https://github.com/Alvinaja/RTX-2080-Merlin kernel
            cp build.sh kernel && cd kernel
            chmod +x build.sh && bash build.sh
