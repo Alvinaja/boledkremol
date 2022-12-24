@@ -30,10 +30,10 @@ tar -xf gcc32.tar.gz -C $GCCbPath
 #Main2
 export TZ="Asia/Jakarta"
 KERNEL_ROOTDIR=$(pwd) # IMPORTANT ! Fill with your kernel source root directory.
-DEVICE_CODENAME=Redmi Note 9 (merlin)
+DEVICE_CODENAME=merlin
 DEVICE_DEFCONFIG=merlin_defconfig
 export KERNEL_NAME=$(cat "arch/arm64/configs/$DEVICE_DEFCONFIG" | grep "CONFIG_LOCALVERSION=" | sed 's/CONFIG_LOCALVERSION="-*//g' | sed 's/"*//g' )
-export KBUILD_BUILD_USER=KuroSeinen
+export KBUILD_BUILD_USER=Alvin
 export KBUILD_BUILD_HOST=XZI-TEAM
 IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz
 CLANG_VER="$("$ClangPath"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
@@ -80,7 +80,7 @@ make -j$(nproc) ARCH=arm64 O=out \
 	finerr
 	exit 1
    fi
-  git clone --depth=1 https://github.com/KuroSeinenbutV2/AnyKernel3 AnyKernel
+  git clone --depth=1 https://github.com/Alvinaja/AnyKernel3 AnyKernel
 	    cp $IMAGE AnyKernel
         cp $DTBO AnyKernel
 }
